@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-vaqnmpeo-gitops
+  description: This is GitOps manifest for go-vaqnmpeo   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-vaqnmpeo
+    backstage.io/kubernetes-id: go-vaqnmpeo 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-vaqnmpeo
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-vaqnmpeo
